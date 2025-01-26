@@ -50,12 +50,12 @@ public class LinkedList {
 	 * @return the node at the given index
 	 */
 	public Node getNode(int index) {
-		if (index < 0 || index > size) {
-			throw new IllegalArgumentException(
-					"index must be between 0 and size");
+		indexValidityCheck(index);
+		ListIterator iterator = iterator();
+		for (int i = 0; i < index; i++) {
+			iterator.next();
 		}
-		//// Replace the following statement with your code
-		return null;
+		return iterator.current;
 	}
 
 	/**
