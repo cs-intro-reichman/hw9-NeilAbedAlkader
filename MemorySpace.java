@@ -77,13 +77,19 @@ public class MemorySpace {
 		return -1;
 	}
 
+
+	/**
+	 * A textual representation of the free list and the allocated list of this memory space,
+	 * for debugging purposes.
+	 */
+	public String toString() {
+		return freeList.toString() + "\n" + allocatedList.toString();
+	}
+
 	/**
 	 * Frees the memory block whose base address equals the given address.
 	 * This implementation deletes the block whose base address equals the given
 	 * address from the allocatedList, and adds it at the end of the free list.
-	 *
-	 * @param baseAddress
-	 *            the starting address of the block to freeList
 	 */
 	public void free(int address) {
 		ListIterator it = allocatedList.iterator();
@@ -96,17 +102,10 @@ public class MemorySpace {
 			throw new IllegalArgumentException(
 					"index must be between 0 and size");
 		}
+
 		MemoryBlock block = it.current.block;
 		freeList.addLast(block);
 		allocatedList.remove(block);
-	}
-
-	/**
-	 * A textual representation of the free list and the allocated list of this memory space,
-	 * for debugging purposes.
-	 */
-	public String toString() {
-		return freeList.toString() + "\n" + allocatedList.toString();
 	}
 
 	/**
@@ -135,6 +134,7 @@ public class MemorySpace {
 				}
 				iteri.next();
 			}
+
 			if (flagTwo) {
 				iteri.current.block.length += def.block.length;
 				freeList.remove(def);

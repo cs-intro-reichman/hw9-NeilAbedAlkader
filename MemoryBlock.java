@@ -28,6 +28,7 @@ public class MemoryBlock {
 	 * @return true if this block equals the other block, false otherwise
 	 */
 	public boolean equals(MemoryBlock other) {
+
 		return baseAddress == other.baseAddress && length == other.length;
 	}
 
