@@ -8,14 +8,14 @@ public class Node {
 
 	/**
 	 * Constructs a new node, pointing to the given memory block.
-	 * 
+	 *
 	 * @param block
 	 *        the given memory block
 	 */
 	public Node(MemoryBlock block) {
 		this.block = block;
 	}
-	
+
 	/**
 	 * A textual representation of this node, for debugging.
 	 * The node's contents, which is a memory block, appears within

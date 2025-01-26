@@ -9,7 +9,7 @@ public class MemoryBlock {
 
 	/**
 	 * Constructs a new memory block with a given base address and length in words 
-	 * 
+	 *
 	 * @param baseAddress
 	 *        the address of the first word in this block
 	 * @param length
@@ -22,7 +22,7 @@ public class MemoryBlock {
 
 	/**
 	 * Checks if this block has the same base address and length as the given block
-	 * 
+	 *
 	 * @param other
 	 *        the given block
 	 * @return true if this block equals the other block, false otherwise
